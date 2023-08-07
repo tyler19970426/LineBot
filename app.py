@@ -38,7 +38,7 @@ def handel_message(event):
                 "emojiId": "020"
             },
                         {
-                "index":7,
+                "index":8,
                 "productId": "5ac21c46040ab15980c9b442",
                 "emojiId": "020"
             }
