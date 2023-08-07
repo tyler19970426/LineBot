@@ -1,6 +1,7 @@
 #載入LineBot所需要的套件
 from line_bot_api import *
 from events.basic import *
+from events.oli import *
 app = Flask(__name__)
 
 @app.route("/callback", methods=['POST'])
@@ -33,7 +34,7 @@ def handel_message(event):
     if event.message_text =='想知道油價':
         content = oil_price()
         line_bot_api.reply_message(
-            event.reply_tokken,
+            event.reply_token,
             TextSendMessage(text=content)
         ) 
  
