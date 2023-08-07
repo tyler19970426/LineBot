@@ -31,7 +31,7 @@ def handel_message(event):
         about_us_event(event)
         Usage(event)
 
-    if event.message_text =='想知道油價':
+    if message_text =='想知道油價':
         content = oil_price()
         line_bot_api.reply_message(
             event.reply_token,
