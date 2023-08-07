@@ -25,10 +25,17 @@ def callback():
 def handel_message(event):  
     message_text = str(event.message.text).lower()
 
+#######################使用說明 選單 油價查詢#################   
     if message_text == '@使用說明':
         about_us_event(event)
         Usage(event)
 
-    
+    if event.message_text =='想知道油價':
+        content = oil_price()
+        line_bot_api.reply_message(
+            event.reply_tokken,
+            TextSendMessage(text=content)
+        ) 
+ 
 if __name__ == '__main__':
     app.run()
