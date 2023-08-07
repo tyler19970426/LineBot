@@ -31,9 +31,38 @@ Hello~ 歡迎您的加入~
         package_id = '11539',
         sticker_id='52114118'
     )
+    buttons_template = TemplateSendMessage(
+            alt_text='小幫手 template',
+            template=ButtonsTemplate(
+                title='選擇服務',
+                text='請選擇',
+                #放imgur的網址
+                thumbnail_image_url='https://i.imgur.com/M0DK02o.png',
+                actions=[
+                  MessageTemplateAction(
+                      label='油價查詢',
+                       text='油價查詢'
+                   ),
+                   MessageTemplateAction(
+                       label='匯率查詢',
+                       text='匯率查詢'
+                   ),
+                   MessageTemplateAction(
+                       label='股票查詢',
+                       text='股票查詢'
+                   )
+                ]
+            )
+        )   
     line_bot_api.reply_message(
         event.reply_token,
-        [text_message, Sticker_message])
+        [text_message, Sticker_message,buttons_template])
+    
+#if event.message.text == "Tyler":
+
+  #      line_bot_api.reply_message(event.reply_token, buttons_template)
+
+
     
 def push_msg(event,msg):
     try:
