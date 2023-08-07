@@ -44,10 +44,12 @@ def handel_message(event):
             }
         ]
     
-    text_message = TextSendMessage(text = '''$ Tyler $ Hello~ 歡迎您的加入~成為Tyler的好友!
-    我是Tyler 您的小幫手
-    這裡有許多的股票資訊
-   可以直接點選下面的功能來使用~''', emojis = emoji)
+    text_message = TextSendMessage(text = '''$ Tyler $ 
+Hello~ 歡迎您的加入~
+成為Tyler的好友!
+我是Tyler 您的小幫手
+這裡有許多的股票資訊
+可以直接點選下面的功能來使用~''', emojis = emoji)
   
   
    # message = TextSendMessage(text = event.message.text)
