@@ -25,8 +25,8 @@ def callback():
 def handel_message(event):  
     message_text = str(event.message.text).lower()
 
-    if message_text == '@使用說明':
+    if message_text == '@最新消息':
         about_us_event(event)
-        
+
 if __name__ == '__main__':
     app.run()
