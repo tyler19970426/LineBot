@@ -37,6 +37,24 @@ def handel_message(event):
             event.reply_token,
             TextSendMessage(text=content)
         ) 
- 
+
+@handler.add(FollowEvent)
+def handle_follow(event):
+    welcome_msg ="""Hello~ 歡迎您的加入~
+成為Tyler的好友!
+我是Tyler 您的小幫手
+這裡有許多的股票資訊
+可以直接點選下面的功能來使用~"""
+
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=welcome_msg))
+    
+@handler.add(UnfollowEvent)
+def handle_unfollow(event):
+    print(event)
+
+
 if __name__ == '__main__':
     app.run()
+
