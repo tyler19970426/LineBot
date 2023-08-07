@@ -20,13 +20,13 @@ def callback():
 
     return "OK"
 
-#處理訊息(回傳同樣的訊息)
+#處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handel_message(event):  
     message_text = str(event.message.text).lower()
 
     if message_text == '@最新消息':
         about_us_event(event)
-
+        Usage(event)
 if __name__ == '__main__':
     app.run()
