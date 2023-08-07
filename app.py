@@ -22,7 +22,7 @@ def callback():
     #handel webhook body
     try:
         handler.handle(body, signature)
-    except IndentationError:
+    except InvalidSignatureError:
         abort(400)
 
     return "OK"
