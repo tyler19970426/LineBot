@@ -35,7 +35,7 @@ Hello~ 歡迎您的加入~
         event.reply_token,
         [text_message, Sticker_message])
     
-def push_msg(eveent,msg):
+def push_msg(event,msg):
     try:
         user_id = event.source.user_id
         line_bot_api.push_message(user_id,TextSendMessage(text=msg))
@@ -47,7 +47,7 @@ def push_msg(eveent,msg):
 def Usage(event):
     push_msg(event,"⭐⭐ 查尋方法 ⭐⭐\
              \n\
-             \n👉小幫手可以查詢油價 \
+             \n👉小幫手可以查詢1️⃣油價2️⃣匯率3️⃣股票 \
              \n\
              \n👉油價通知\
              \n👉匯率\
