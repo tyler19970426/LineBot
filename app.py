@@ -37,7 +37,7 @@ def handel_message(event):
             event.reply_token,
             TextSendMessage(text=content)
         ) 
-
+##############封鎖和解封################
 @handler.add(FollowEvent)
 def handle_follow(event):
     welcome_msg ="""Hello~ 歡迎您的加入~
