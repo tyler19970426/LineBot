@@ -5,6 +5,7 @@ stockDB = 'mydb'
 dbname=  'howard-good31'
 
 def constructor_stock():
+    #密碼藥用mongodb的密碼
     clinet = MongoClient('mongodb://pxxqzz25852:qbb852258@ac-omwctnz-shard-00-00.bmfoxdm.mongodb.net:27017,ac-omwctnz-shard-00-01.bmfoxdm.mongodb.net:27017,ac-omwctnz-shard-00-02.bmfoxdm.mongodb.net:27017/?ssl=true&replicaSet=atlas-1dwvdm-shard-0&authSource=admin&retryWrites=true&w=majority')
     db = clinet [stockDB]
     return db
