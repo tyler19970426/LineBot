@@ -65,7 +65,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#FFFF33",
+            "color": "#C8E4B2",
             "margin": "sm"
           },
           {
@@ -77,7 +77,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#FFFF33",
+            "color": "#C8E4B2",
             "margin": "sm"
           },
           {
@@ -89,7 +89,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#FFFF33",
+            "color": "#C8E4B2",
             "margin": "sm"
           }
         ]
@@ -111,7 +111,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#FFFF33",
+            "color": "#9ED2BE",
             "margin": "sm"
           },
           {
@@ -123,7 +123,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#FFFF33",
+            "color": "#9ED2BE",
             "margin": "sm"
           },
           {
@@ -135,7 +135,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#FFFF33",
+            "color": "#9ED2BE",
             "margin": "sm"
           }
         ]
@@ -157,7 +157,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#99BBFF",
+            "color": "#C8E4B2",
             "margin": "sm"
           },
           {
@@ -169,7 +169,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#99BBFF",
+            "color": "#C8E4B2",
             "margin": "sm"
           },
           {
@@ -181,7 +181,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#99BBFF",
+            "color": "#C8E4B2",
             "margin": "sm"
           }
         ]
@@ -203,7 +203,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#99BBFF",
+            "color": "#9ED2BE",
             "margin": "sm"
           },
           {
@@ -215,7 +215,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#99BBFF",
+            "color": "#9ED2BE",
             "margin": "sm"
           },
           {
@@ -227,7 +227,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#99BBFF",
+            "color": "#9ED2BE",
             "margin": "sm"
           }
         ]
@@ -249,7 +249,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#FF88C2",
+            "color": "#C8E4B2",
             "margin": "sm"
           },
           {
@@ -261,7 +261,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#FF88C2",
+            "color": "#C8E4B2",
             "margin": "sm"
           },
           {
@@ -273,7 +273,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#FF88C2",
+            "color": "#C8E4B2",
             "margin": "sm"
           }
         ]
@@ -295,7 +295,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#FF88C2",
+            "color": "#9ED2BE",
             "margin": "sm"
           },
           {
@@ -307,7 +307,7 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#FF88C2",
+            "color": "#9ED2BE",
             "margin": "sm"
           },
           {
@@ -319,14 +319,13 @@ def show_Button():
             },
             "gravity": "center",
             "style": "secondary",
-            "color": "#FF88C2",
+            "color": "#9ED2BE",
             "margin": "sm"
           }
         ]
       }
     ]
   }
-}
-                    
+}     
     )
     return flex_message   
