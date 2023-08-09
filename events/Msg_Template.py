@@ -44,7 +44,8 @@ def show_Button():
         "type": "image",
         "url": "https://i.imgur.com/M0DK02o.png",
         "position": "relative",
-        "aspectMode": "cover"
+        "aspectMode": "cover",
+        "size": "full"
       }
     ]
   },
@@ -326,6 +327,6 @@ def show_Button():
       }
     ]
   }
-}     
+}
     )
     return flex_message   
