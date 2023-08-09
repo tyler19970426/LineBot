@@ -2,6 +2,10 @@
 from line_bot_api import *
 from events.basic import *
 from events.oli import *
+from events.Msg_Template import *
+import re
+import datetime
+import twstock
 app = Flask(__name__)
 
 @app.route("/callback", methods=['POST'])
@@ -25,11 +29,12 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handel_message(event):  
     #可以回傳使用者ID
-    profile = line_bot_api.get_profile(event.source.user_id)
+    profile = line_bot_api.get_profile(event.source.user_id) #抓取使用者個人資訊
     uid = profile.user_id
 
-    message_text = str(event.message.text).lower()
-
+    message_text = str(event.message.text).lower()#抓取使用者所傳送的訊息 並改成字串和小寫方便工程師處理
+    msg = str(event.message.text).upper().strip()
+    emsg = event.message.text
 #######################使用說明 選單 油價查詢#################   
     if message_text == '@使用說明':
         about_us_event(event)
@@ -45,7 +50,43 @@ def handel_message(event):
 #######################股票區################
     if event.message.text =='股價查詢':
         line_bot_api.push_message(uid, TextSendMessage('請輸入#+股票代號....'))
+#股票查詢
+    if re.match("想知道股價[0-9]",msg):
+        stockNumber = msg[5:9]
+        btn_msg = stock_reply_other(stockNumber)
+        line_bot_api.push_message(uid, btn_msg)
+        return 0
+    if (emsg.startswith('#')):
+        text = emsg[1:]
+        content=''
 
+        stock_rt = twstock.realtime.get(text)
+        my_datetime = datetime.datetime.fromtimestamp(stock_rt['timestamp']+8*60*60)
+        my_time = my_datetime.strftime('%H:%M:%S')
+
+        content += '%s (%s) %s\n' %(
+            stock_rt['info']['name'],
+            stock_rt['info']['code'],
+            my_time)
+        content += '現價:%s / 開盤 %s\n'%(
+            stock_rt['realtime']['latest_trade_price'],
+            stock_rt['realtime']['open'])
+        content += '最高:%s / 最低 %s\n'%(
+            stock_rt['realtime']['high'],
+            stock_rt['realtime']['low'])
+        content += '量: %s\n' %(stock_rt['realtime']['accumulate_trade_volume'])
+
+        stock = twstock.Stock(text)#twstock.Stock('2330) 
+        content +='-----\n'
+        content +='最近五日價格:\n'
+        price5 = stock.price[-5:][::-1]
+        date5 = stock.date[-5:][::-1]
+        for i in range(len(price5)):
+            content += '[%s] %s\n' % (date5[i].strftime('%Y-%m-%d'),[price5[i]])
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=content)
+        )
 ##############封鎖和解封################
 @handler.add(FollowEvent)
 def handle_follow(event):
