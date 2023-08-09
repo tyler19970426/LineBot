@@ -51,7 +51,7 @@ def handel_message(event):
     if event.message.text =='股價查詢':
         line_bot_api.push_message(uid, TextSendMessage('請輸入#+股票代號....'))
 #股票查詢
-    if re.match("想知道股價[0-9]:", msg):
+    if re.match("想知道股價[0-9]", msg):
         stockNumber = msg[5:9]
         btn_msg = stock_reply_other(stockNumber)
         line_bot_api.push_message(uid, btn_msg)
