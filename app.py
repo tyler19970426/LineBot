@@ -3,9 +3,11 @@ from line_bot_api import *
 from events.basic import *
 from events.oli import *
 from events.Msg_Template import *
+from model.mongodb import *
 import re
 import datetime
 import twstock
+
 app = Flask(__name__)
 
 @app.route("/callback", methods=['POST'])
@@ -35,6 +37,7 @@ def handel_message(event):
     message_text = str(event.message.text).lower()#抓取使用者所傳送的訊息 並改成字串和小寫方便工程師處理
     msg = str(event.message.text).upper().strip()
     emsg = event.message.text
+    user_name = profile.display_name #使用者名稱
 #######################使用說明 選單 油價查詢#################   
     if message_text == '@使用說明':
         about_us_event(event)
@@ -56,7 +59,16 @@ def handel_message(event):
         btn_msg = stock_reply_other(stockNumber)
         line_bot_api.push_message(uid, btn_msg)
         return 0
-    
+
+#新增使用者關注的股票到mongodb
+    if re.match("關注[0-9]{4}[<>][0-9]",msg):#使用者新增股票至股票清單    
+        stockNumber = msg[2:]
+        content = write_my_stock(uid, user_name,stockNumber,msg[6:7],msg[7:])
+    else:
+        content = write_my_stock(uid, user_name, stockNumber, "未設定",'未設定')
+        line_bot_api.push_message(uid, TextSendMessage(content))
+        return 0
+
     if (emsg.startswith('#')):
         text = emsg[1:]
         content =''
