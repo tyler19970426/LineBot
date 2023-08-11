@@ -1,86 +1,86 @@
 from line_bot_api import *
 
-# def stock_two_Button():
+def stock_two_Button():
  
-#  Button_message = FlexSendMessage(
-#   alt_text="選單",
-#   contents={
-#             "type": "bubble",
-#             "hero": {
-#               "type": "image",
-#               "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
-#               "size": "full",
-#               "aspectRatio": "20:13",
-#               "aspectMode": "cover",
-#               "action": {
-#                 "type": "uri",
-#                 "uri": "https://linecorp.com"
-#               }
-#             },
-#             "body": {
-#               "type": "box",
-#               "layout": "vertical",
-#               "spacing": "md",
-#               "action": {
-#                 "type": "uri",
-#                 "uri": "https://linecorp.com"
-#               },
-#               "contents": [
-#                 {
-#                   "type": "text",
-#                   "text": "股票",
-#                   "size": "xl",
-#                   "weight": "bold"
-#                 },
-#                 {
-#                   "type": "box",
-#                   "layout": "vertical",
-#                   "spacing": "sm",
-#                   "contents": [
-#                     {
-#                       "type": "button",
-#                       "action": {
-#                         "type": "message",
-#                         "label": "股價查詢",
-#                         "text": "股價查詢"
-#                       },
-#                       "style": "primary"
-#                     }
-#                   ]
-#                 },
-#                 {
-#                   "type": "text",
-#                   "text": "-----------------------------------------------------------------",
-#                   "wrap": True,
-#                   "color": "#aaaaaa",
-#                   "size": "xxs"
-#                 },
-#                 {
-#                   "type": "box",
-#                   "layout": "vertical",
-#                   "contents": [
-#                     {
-#                       "type": "text",
-#                       "text": "匯率",
-#                       "size": "xl",
-#                       "weight": "bold"
-#                     },
-#                     {
-#                       "type": "button",
-#                       "action": {
-#                         "type": "message",
-#                         "label": "幣別種類",
-#                         "text": "幣別種類"
-#                       },
-#                       "style": "primary"
-#                     }
-#                   ]
-#                 }
-#               ]
-#             }
-#           }
-#  )
-#  return Button_message
+ Button_message = FlexSendMessage(
+  alt_text="選單",
+  contents={
+            "type": "bubble",
+            "hero": {
+              "type": "image",
+              "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
+              "size": "full",
+              "aspectRatio": "20:13",
+              "aspectMode": "cover",
+              "action": {
+                "type": "uri",
+                "uri": "https://linecorp.com"
+              }
+            },
+            "body": {
+              "type": "box",
+              "layout": "vertical",
+              "spacing": "md",
+              "action": {
+                "type": "uri",
+                "uri": "https://linecorp.com"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "股票",
+                  "size": "xl",
+                  "weight": "bold"
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "spacing": "sm",
+                  "contents": [
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "message",
+                        "label": "股價查詢",
+                        "text": "股價查詢"
+                      },
+                      "style": "primary"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "-----------------------------------------------------------------",
+                  "wrap": True,
+                  "color": "#aaaaaa",
+                  "size": "xxs"
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "匯率",
+                      "size": "xl",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "message",
+                        "label": "幣別種類",
+                        "text": "幣別種類"
+                      },
+                      "style": "primary"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+ )
+ return Button_message
 
 
 
