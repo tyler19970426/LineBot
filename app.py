@@ -74,6 +74,13 @@ def handel_message(event):
     #     line_bot_api.push_message(uid, TextSendMessage(content))
     #     return 0
 
+    #查詢股票篩選條件清單
+    if re.match('股票清單',msg):
+        line_bot_api.push_message(uid, TextSendMessage('稍等一下,股票查詢中...'))
+        content = show_stock_setting(user_name, uid)
+        line_bot_api.push_message(uid, TextSendMessage(content))
+        return 0
+
     if (emsg.startswith('#')):
         text = emsg[1:]
         content =''
@@ -108,6 +115,7 @@ def handel_message(event):
             TextSendMessage(text=content)
         )
 ###################匯率區#############################
+    
     if re.match('幣別種類', emsg):
         message = show_Button()
         line_bot_api.reply_message(event.reply_token,message)
