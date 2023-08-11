@@ -134,6 +134,7 @@ def handel_message(event):
                     line_bot_api.push_message(userID, TextSendMessage(text = content))
         def job():
             print('HH')
+            line_bot_api.push_message(uid, TextSendMessage("快買R!"))
             dataList = cache_users_stock()
             #print(dataLit)
             for i in range(len(dataList)):
