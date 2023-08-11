@@ -142,7 +142,10 @@ def handel_message(event):
                     look_stock_price(dataList[i][k]['favorite_stock'], dataList[i][k]['condition'], dataList[i][k]['price'], dataList[i][k]['userID'])
         schedule.every(30).seconds.do(job).tag('daily-tasks-stock'+uid, 'second')# 每10秒執行1次
         #schedule.every().hour.do(job) #每小時執行一次
-        
+        #schedule.every().day.at('17:19').do(job) #每天17:19執行一次
+        #schedule.every().monday.do(job) #每周一執行一次
+        #schedule.every().wednesday.at('17:19').do(job) #每週三17:19執行一次
+        #無窮迴圈
         while True:
             schedule.run_pending()
             time.sleep(1)
