@@ -51,7 +51,7 @@ def stock_two_Button():
                 {
                   "type": "text",
                   "text": "-----------------------------------------------------------------",
-                  "wrap": true,
+                  "wrap": True,
                   "color": "#aaaaaa",
                   "size": "xxs"
                 },
