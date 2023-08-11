@@ -127,7 +127,7 @@ def handel_message(event):
 ###################匯率區#############################
     if re.match('選單',msg):
         message = stock_two_Button()
-        line_bot_api.push_message(event.reply_token,message)
+        line_bot_api.push_message(uid, TextSendMessage(content))
 
 
 
