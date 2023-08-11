@@ -80,6 +80,16 @@ def handel_message(event):
         content = show_stock_setting(user_name, uid)
         line_bot_api.push_message(uid, TextSendMessage(content))
         return 0
+    #刪除存在資料庫裏面的股票
+    if re.match('刪除[0-9]{4}',msg):
+        content = delete_my_stock(user_name,msg[2:])
+        line_bot_api.push_message(uid, TextSendMessage(content))
+        return 0
+    #清空存在資料庫裏面的股票
+    if re.match('清空股票',msg):
+        content = delete_my_allstock(user_name,uid)
+        line_bot_api.push_message(uid, TextSendMessage(content))
+        return 0
 
     if (emsg.startswith('#')):
         text = emsg[1:]
@@ -115,7 +125,12 @@ def handel_message(event):
             TextSendMessage(text=content)
         )
 ###################匯率區#############################
-    
+    if re.match('選單',msg):
+        message = stock_two_Button()
+        line_bot_api.push_message(event.reply_token,message)
+
+
+
     if re.match('幣別種類', emsg):
         message = show_Button()
         line_bot_api.reply_message(event.reply_token,message)
